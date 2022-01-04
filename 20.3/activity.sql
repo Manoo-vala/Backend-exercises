@@ -17,8 +17,6 @@ AND replacement_cost > 18
 ORDER BY replacement_cost, title
 LIMIT 100;
 
-
-
 -- =====================================================================================
 
 USE sakila;
@@ -47,3 +45,13 @@ OR title LIKE "mosquito%";
 SELECT * FROM film
 WHERE description LIKE "%monkey%"
 AND description LIKE "%sumo%";
+
+-- =======================================================================================
+
+USE sakila;
+
+SELECT * FROM payment
+WHERE payment_id IN (269, 239, 126, 399, 142);
+
+SELECT * FROM address
+WHERE district IN ('QLD', 'Nagasaki', 'California', 'Attika', 'Mandalay', 'Nantou', 'Texas');
