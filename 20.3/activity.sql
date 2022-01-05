@@ -55,3 +55,20 @@ WHERE payment_id IN (269, 239, 126, 399, 142);
 
 SELECT * FROM address
 WHERE district IN ('QLD', 'Nagasaki', 'California', 'Attika', 'Mandalay', 'Nantou', 'Texas');
+
+-- ============================================================================================
+
+USE sakila;
+SELECT * FROM customer;
+
+SELECT first_name, last_name, email FROM customer
+WHERE last_name IN ('hicks', 'crawford', 'henry', 'boyd', 'mason', 'morales', 'kennedy');
+
+SELECT email FROM customer
+WHERE address_id IN (172, 173, 174, 175, 176);
+
+SELECT * FROM payment;
+SELECT COUNT(*) quantidade_de_pagamentos FROM payment
+WHERE DATE(payment_date)
+BETWEEN '2005-05-01' AND '2005-08-01';
+
