@@ -13,15 +13,21 @@ const handleAllBooks = async () => {
 }
 
 const handleBooksById = async (id) => {
-  const books = await Book.FindByPk(id);
 
-  if(!books) {
-    const err = new Error();
-    err.message = 'Request Error: ' + err;
+  try {
+    const books = await Book.findByPk(id);
+  
+    if(!books) {
+      const err = new Error();
+      err.message = 'Request Error';
+      throw err;
+    }
+
+    return books;
+  } catch(err) {
+    console.log(err);
     throw err;
   }
-
-  return books;
 };
 
 module.exports = {

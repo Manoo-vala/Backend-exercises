@@ -1,12 +1,16 @@
 const express = require('express');
 const book = express.Router();
-const { BookControllers } = require('./controllers')
+const {
+    BookControllers: {
+      requireAllBooks,
+      requireBooksById,
+    }} = require('./controllers')
 
 // ToDos :
-book.get('/', BookControllers.requireAllBooks);
+book.get('/', requireAllBooks);
 // GET /books - lista todos os livros;
 
-book.get('/:id');
+book.get('/:id', requireBooksById);
 // GET /book/:id - pega o livro com o id especificado;
 
 // book.post();
