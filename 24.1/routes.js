@@ -4,6 +4,9 @@ const {
     BookControllers: {
       requireAllBooks,
       requireBooksById,
+      createNewBook,
+      updateExistingBook,
+      deleteBook,
     }} = require('./controllers')
 
 // ToDos :
@@ -13,13 +16,13 @@ book.get('/', requireAllBooks);
 book.get('/:id', requireBooksById);
 // GET /book/:id - pega o livro com o id especificado;
 
-// book.post();
+book.post('/', createNewBook);
 // POST /book - cria um novo livro;
 
-// book.post();
+book.post('/:id', updateExistingBook);
 // POST /book/:id - sobrescreve o livro com ID selecionado;
 
-// book.delete();
+book.delete('/:id', deleteBook);
 // DELETE /book/:id - deleta um livro;
 
 module.exports = book;
