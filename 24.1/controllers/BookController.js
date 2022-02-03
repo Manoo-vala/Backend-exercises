@@ -7,7 +7,7 @@ const requireAllBooks = async (_req, res) => {
 }
 
 const requireBooksById = async (req, res) => {
-  // const getBooks = await 
+  // const getBooks = await
 }
 
 module.exports = {
