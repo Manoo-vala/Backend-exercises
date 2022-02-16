@@ -8,18 +8,21 @@ module.exports = {
       author: 'Michele Vision',
       pageQuantity: 540,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
     },
     {
       title: 'Material Rich Girl',
       author: 'Boy Liquif',
       pageQuantity: 298,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
     },
     {
       title: 'Zamp Lamp Clamp Mamp',
       author: 'unknown',
       pageQuantity: 666,
       createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
     },
   ], {}),
 
