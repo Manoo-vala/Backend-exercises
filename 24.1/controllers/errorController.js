@@ -1,1 +1,0 @@
-// Em caso de erro, os endpoints devem retornar status code 500 com a mensagem: 'Algo deu errado'.
