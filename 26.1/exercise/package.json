@@ -1,0 +1,24 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "area": "ts-node area.ts",
+    "capacity": "ts-node capacity.ts",
+    "length": "ts-node length.ts",
+    "mass": "ts-node mass.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.4",
+    "ts-node": "^10.5.0"
+  }
+}
