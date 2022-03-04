@@ -20,7 +20,12 @@ module.exports = async (req, res) => {
       expiresIn: '5h',
       algorithm: 'HS256',
     }
-    const token = jwt.sign({data: user}, secret, jwtConfig);
+    const payload = {
+      subject: user.username,
+      isAdmin: false,
+    }
+
+    const token = jwt.sign(payload, secret, jwtConfig);
 
   return res.status(200).json({ token });
   } catch (err) {
