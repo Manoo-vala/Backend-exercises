@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, secret);
+    const decoded = jwt.verify(token, secret, { algorithms: ['HS256'] });
 
     const user = await User.findOne({ where: { username: decoded.data.username }});
 

@@ -72,3 +72,5 @@ class students2 {
 }
 
 const Alunaras = new students2('25/02/2022', 'Marcelian')
+
+console.log(Alunaras.name);
