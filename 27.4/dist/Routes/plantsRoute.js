@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var PlantsRoute = (0, express_1.Router)();
+PlantsRoute.get('/');
+PlantsRoute.get('/:id');
+PlantsRoute.delete('/:id');
+PlantsRoute.post('/:id');
+PlantsRoute.post('/');
+exports.default = PlantsRoute;
