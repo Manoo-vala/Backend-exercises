@@ -2,8 +2,8 @@ import IPlant from "../interfaces/Iplant";
 import fs from 'fs/promises';
 import IOpsInfo from "../interfaces/IOpsInfo";
 
- class InitPlant {
-  protected initPlant(plant: IPlant) {
+abstract class InitPlant {
+  protected initPlant(plant: IPlant):IPlant {
     const { id, breed, needsSun, origin, specialCare, size } = plant;
 
     const waterFrequency = needsSun
