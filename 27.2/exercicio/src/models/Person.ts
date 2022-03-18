@@ -37,6 +37,4 @@ export default class Person {
     if(value.getTime() > new Date().getTime()) throw new Error('A data de nascimento não pode ser uma data no futuro.');
     if(Person.getAge(value) > 120) throw new Error('Olá abuelita, seu tratamento de dados será diferente <3');
   }
-
-
 }
