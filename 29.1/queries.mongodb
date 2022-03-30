@@ -1,0 +1,30 @@
+use('bios')
+db.bios.find({ _id: 8 })
+
+use('bios')
+db.bios.find({ _id: 8 }, { _id: 1, name: 1 })
+
+use('bios')
+db.bios.find({ _id: 8 }, { birth: 1, name: 1 })
+
+use('bios')
+db.bios.find({ "name.first": "John" })
+
+use('bios')
+db.bios.find({}).limit(3).pretty()
+
+use('bios')
+db.bios.find({}).skip(5).limit(2).pretty()
+
+use('bios')
+db.bios.countDocuments({})
+
+use('bios')
+db.bios.find({}, { contribs: true })
+
+use('bios')
+db.bios.countDocuments({ contribs: "ALGOL" }, { contribs: 1 })
+
+use('bios')
+db.bios.find({ _id: { $gt: 2 } }, { _id: 1, contribs: 1 }).limit(4)
+
