@@ -77,3 +77,6 @@ use('cinema')
 db.movies.find({
   description: { $regex: /humanity.$/i }
 })
+
+use('cinema')
+db.movies.find().count()
