@@ -1,0 +1,83 @@
+use('superheroes')
+db.class.countDocuments()
+
+use('superheroes')
+db.class.findOne({ "aspects.eyeColor": "red" })
+
+use('superheroes')
+db.class.find({ "aspects.height": { $gte: 180 } }).limit(5)
+
+use('superheroes')
+db.class.find({ "aspects.height": { $lte: 180 } }).limit(5)
+
+use('superheroes')
+db.class.findOne({ "aspects.height": { $gte: 200 } })
+
+use('superheroes')
+db.class.find({ "aspects.height": { $gte: 200 } }).count()
+
+use('superheroes')
+db.class.find({ "aspects.eyeColor": "green" })
+
+use('superheroes')
+db.class.find({ "aspects.eyeColor": "blue" })
+
+use('superheroes')
+db.class.find({ "aspects.hairColor": { $in: ["Black", "No Hair"] } })
+
+use('superheroes')
+db.class.find({ "aspects.hairColor": { $in: ["Black", "No Hair"] } }).count()
+
+
+use('superheroes')
+db.class.find({ "aspects.hairColor": { $nin: ["Black", "No Hair"] } }).count()
+
+use('superheroes')
+db.class.find({ "aspects.height": { $not :{$gt: 180} } }).count()
+
+use('superheroes')
+db.class.find({
+  race: { $not: /Human/i },
+  "aspects.height": { $lte: 180 },
+  })
+
+use('superheroes')
+db.class.find({
+  publisher: "Marvel Comics",
+  $and: [
+    { "aspects.height": { $gt: 180 , $lt: 200} },
+  ]
+})
+
+use('superheroes')
+db.class.find({
+    publisher: "DC Comics",
+    $and: [
+      { "aspects.weight": { $gt: 80 , $lt: 100} },
+      {
+        $or: [
+          { race: { $in: ["Human", "Mutant"] } }
+        ]
+      }
+    ]
+})
+
+use('superheroes')
+db.class.find({
+  race: { $exists: false}
+}).count()
+
+use('superheroes')
+db.class.find({
+  "aspects.hairColor": { $exists: true}
+}).count()
+
+use('superheroes')
+db.class.deleteOne({
+  publisher: "Sony Pictures"
+})
+
+use('superheroes')
+db.class.deleteMany({
+  publisher: "George Lucas"
+})
