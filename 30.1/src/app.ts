@@ -1,28 +1,28 @@
-import express from 'express';
-import { connection }from './models/connection';
+import express, { Router } from 'express';
+import connection from './models/connection';
 
 export default class App {
-  public express: express.Application;
-  public connection: void;
+  public app: express.Application;
 
   constructor() {
-    this.express = express();
+    this.app = express();
     this.middlewares();
-    this.connection = connection('mongodb://localhost:27017/world_cups');
-    this.routes();
-    this.errorMiddlewares();
+  }
+
+  public startServer(port = 3001) {
+    connection();
+    const actualPort = process.env.PORT || port;
+    return this.app.listen(
+      actualPort,
+      () => console.log('Estamos online na porta: ', actualPort),
+    );
   }
 
   private middlewares() {
-    this.express.use(express.json());
+    this.app.use(express.json());
   }
 
-  // Rotas virão aqui
-  private routes () {
-    this.express.use('');
-  }
-
-  private errorMiddlewares() {
-    this.express.use('');
+  public addRouter(router: Router) {
+    this.app.use(router);
   }
 }
