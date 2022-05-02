@@ -1,24 +1,8 @@
-import { connect, Schema, Types } from 'mongoose';
-import { ITournament } from '../types/interfaces/tournaments';
+import mongoose from 'mongoose';
 
-export const connection = (uri: string) => {
-  try {
-    connect(uri);
-    console.log(`Conectado ao mongodb em: ${uri}`);
-  } catch (error) {
-    console.log(error);
-  }
-};
+const connectToDataBase = (
+  mongoDatabaseURI = process.env.MONGO_URI
+  || 'mongodb://localhost:27017/TrybeStore',
+) => mongoose.connect(mongoDatabaseURI);
 
-export const tournamentSchema = new Schema<ITournament>({
-  id: { type: Types.ObjectId },
-  year: {type: Number, required: true},
-  hostCountry: {type: String, required: true},
-  champions: {type: String, required: true},
-  runnerUp: {type: String, required: true},
-  editionGoals: {type: Number, required: true},
-  editionStrikers: {type: [{ type: String }], required: true},
-  bestPlayer: {type: String, required: false},
-  bestGoalkeeper: {type: String, required: false},
-  bestYoungPlayer: {type: String, required: false},
-});
+export default connectToDataBase;
